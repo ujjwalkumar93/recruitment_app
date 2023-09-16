@@ -1,6 +1,6 @@
 ## Recruitment App
 
-ujjwal kumar
+Frappe app for recruitment
 
 #### License
 

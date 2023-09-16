@@ -9,8 +9,8 @@ from recruitment_app import __version__ as version
 setup(
 	name="recruitment_app",
 	version=version,
-	description="ujjwal kumar",
-	author="ujjwal kumar",
+	description="Frappe app for recruitment",
+	author="Ujjwal Kumar",
 	author_email="pathakujjwal93@gmail.com",
 	packages=find_packages(),
 	zip_safe=False,

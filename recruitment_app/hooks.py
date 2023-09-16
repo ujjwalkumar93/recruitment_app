@@ -2,8 +2,8 @@ from . import __version__ as app_version
 
 app_name = "recruitment_app"
 app_title = "Recruitment App"
-app_publisher = "ujjwal kumar"
-app_description = "ujjwal kumar"
+app_publisher = "Ujjwal Kumar"
+app_description = "Frappe app for recruitment"
 app_email = "pathakujjwal93@gmail.com"
 app_license = "MIT"
 
