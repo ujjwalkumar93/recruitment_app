@@ -4,4 +4,4 @@ Frappe app for recruitment
 
 #### License
 
-MIT
+MIT# recruitment_app
