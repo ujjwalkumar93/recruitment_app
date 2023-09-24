@@ -1,0 +1,24 @@
+{% extends "templates/web.html" %}
+
+{% block content %}
+<div class="container mt-2" id="main">
+    <div class="card">
+        <div class="card-body">
+            {% if frappe.session.user != 'Guest'%}
+            <a href="#" class="btn btn-primary" style="float: right;">Apply Now</a>
+            {% else %}
+            <a href="#" class="btn btn-primary" style="float: right;" id="login">Login to apply</a>
+            {% endif %}
+            <h5 class="card-title">{{ job_description.organization_name }}</h5>
+            <p class="card-text">Job Position: {{ job_description.job_title }}</p>
+            <p class="card-text">Location: {{ job_description.location }}</p>
+            <p class="card-text"><span style="font-size: .9rem;">Package:</span> ₹{{ job_description.budget_from/100000
+                }}L - ₹{{ job_description.budget_to/100000 }}L</p>
+            <p> <span style="font-size: .9rem;">Posted On:</span> {{ job_description.creation.strftime('%-d %b %Y')}}
+            </p>
+            {{job_description.description }}
+        </div>
+    </div>
+</div>
+{% endblock %}
+<script src="/index.js"></script>

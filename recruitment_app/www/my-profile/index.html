@@ -1,0 +1,74 @@
+{% extends "templates/web.html" %}
+
+{% block content %}
+<div class="container mt-2 mb-5">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="d-flex justify-content-center">
+                <form action="/update_profile" method="post" id="profileForm">
+                    <div class="row">
+                        <div class="col-md-9 col-12">
+                            <h4 class="mb-3">My Profile</h4>
+                            <input type="hidden" id="docname" value='{{profile.name}}'>
+                        </div>
+                        <div class="col-md-3 col-12 text-md-right text-center  mt-md-12"> 
+                            <button class="btn btn-info" id="editButton" style="display: block;">Edit</button>
+                            <button id="saveButton" class="btn btn-info" style="display: none;">Save</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{ profile.name1 if profile.name1 else '' }}" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" value="{{ profile.email if profile.email else '' }}" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Contact Number:</label>
+                        <input type="tel" class="form-control" id="contact" name="contact" value="{{ profile.mobile_number if profile.mobile_number else '' }}" required readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" class="form-control" id="dob" name="dob" value="{{ profile.date_of_birth if profile.date_of_birth else '' }}" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select class="form-control" id="gender" name="gender" readonly disabled>
+                            <option value="select" {% if not profile.gender %}selected{% endif %}>Select Gender</option>
+                            <option value="Male" {% if profile.gender == 'Male' %}selected{% endif %}>Male</option>
+                            <option value="Female" {% if profile.gender == 'Female' %}selected{% endif %}>Female</option>
+                            <option value="Other" {% if profile.gender == 'Other' %}selected{% endif %}>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cgpa">CGPA:</label>
+                        <input type="number" class="form-control" id="cgpa" name="cgpa" step="0.01" value="{{ profile.cgpa if profile.cgpa else 0 }}" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <textarea class="form-control" id="address" name="address" required readonly>{{ profile.address if profile.address else '' }}</textarea>
+                    </div>
+                    <div class="form-group file-input-container">
+                        <label for="pdf" class="file-input-label">Attach Resume</label>
+                        <input type="file" class="form-control-file" id="pdf" name="pdf" disabled>
+                        <div class="file-name">No file chosen</div>
+                    </div>
+        
+                </form>
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+            <h4 class="text">Job listing</h4>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+<script src="/index.js"></script>
+

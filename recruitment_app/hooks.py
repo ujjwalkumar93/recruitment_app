@@ -215,3 +215,18 @@ app_license = "MIT"
 # auth_hooks = [
 #	"recruitment_app.auth.validate"
 # ]
+
+# custom route
+website_route_rules = [
+    {'from_route': '/job/<id>', 'to_route': 'job_description'}
+]
+
+# navbar_items = [
+#     {
+#         "label": "jobs",
+#         "route": "/jobs",
+#         "icon": "fa fa-globe",
+#         "type": "page",
+       
+#     }
+# ]

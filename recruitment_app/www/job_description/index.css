@@ -1,0 +1,8 @@
+.card-text {
+    margin-top: -.3rem;
+    margin-bottom: -.3rem;
+}
+#main {
+    display: block;
+    min-height: 80vh;
+}

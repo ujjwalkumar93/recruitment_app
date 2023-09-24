@@ -1,0 +1,104 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{organization_name}-{job_title}-{DD}-{MM}-{YYYY}-{####}",
+ "creation": "2023-09-16 11:55:02.679890",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "organization_name",
+  "location",
+  "logo",
+  "publish",
+  "minimum_cgpa",
+  "job_title",
+  "total_opening",
+  "budget_from",
+  "budget_to",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "organization_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Organization Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "logo",
+   "fieldtype": "Attach Image",
+   "label": "Logo"
+  },
+  {
+   "fieldname": "job_title",
+   "fieldtype": "Data",
+   "label": "Job Title"
+  },
+  {
+   "fieldname": "budget_from",
+   "fieldtype": "Currency",
+   "label": "Budget From"
+  },
+  {
+   "fieldname": "budget_to",
+   "fieldtype": "Currency",
+   "label": "Budget To"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "HTML Editor",
+   "label": "Description"
+  },
+  {
+   "default": "0",
+   "fieldname": "publish",
+   "fieldtype": "Check",
+   "label": "Publish"
+  },
+  {
+   "fieldname": "minimum_cgpa",
+   "fieldtype": "Percent",
+   "label": "Minimum CGPA"
+  },
+  {
+   "fieldname": "total_opening",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Opening"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-09-20 19:46:21.226852",
+ "modified_by": "Administrator",
+ "module": "Recruitment App",
+ "name": "Job Opening",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
