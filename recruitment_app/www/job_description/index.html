@@ -1,11 +1,18 @@
 {% extends "templates/web.html" %}
 
 {% block content %}
+{% if job_description %}
 <div class="container mt-2" id="main">
     <div class="card">
         <div class="card-body">
-            {% if frappe.session.user != 'Guest'%}
-            <a href="#" class="btn btn-primary" style="float: right;">Apply Now</a>
+            {% if frappe.session.user != 'Guest' %}
+            <input type="hidden" id="job-id" name="hiddenField" value="{{job_description.name}}">
+            
+            {% if job_description.applied_on %}
+            <span class="badge badge-info" id="badge"  style="float: right;">Applied on {{job_description.applied_on}}</span>
+            {% else %}
+            <button class="btn btn-primary" style="float: right;" id="apply-btn" onclick="submitJobApplication()">Apply Now</button>
+            {% endif %}
             {% else %}
             <a href="#" class="btn btn-primary" style="float: right;" id="login">Login to apply</a>
             {% endif %}
@@ -14,11 +21,15 @@
             <p class="card-text">Location: {{ job_description.location }}</p>
             <p class="card-text"><span style="font-size: .9rem;">Package:</span> ₹{{ job_description.budget_from/100000
                 }}L - ₹{{ job_description.budget_to/100000 }}L</p>
-            <p> <span style="font-size: .9rem;">Posted On:</span> {{ job_description.creation.strftime('%-d %b %Y')}}
+            {% if job_description.posted_on %}
+            <p> 
+                <span style="font-size: .9rem;">Posted On:</span> {{ job_description.posted_on.strftime('%-d %b %Y')}}
             </p>
+            {% endif %}
             {{job_description.description }}
         </div>
     </div>
 </div>
+{% endif %}
 {% endblock %}
 <script src="/index.js"></script>

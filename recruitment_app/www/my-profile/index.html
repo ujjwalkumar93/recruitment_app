@@ -1,6 +1,7 @@
 {% extends "templates/web.html" %}
 
 {% block content %}
+{% if profile %}
 <div class="container mt-2 mb-5">
     <div class="row">
         <div class="col-md-9">
@@ -63,11 +64,34 @@
         </div>
 
         <div class="col-md-3">
-            <h4 class="text">Job listing</h4>
+            <h4 class="text">Applied Jobs</h4>
+            {% for job in profile.applied_jobs %}
+            <div class="container mt-4">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">{{ job.company_name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{job.job_title}}</h6>
+                        <p class="card-text">
+                            Posted On: {{ job.posted_on.strftime('%-d %b %Y') }}
+                            <br>
+                            Applied On: {{ job.applied_on.strftime('%-d %b %Y') }}
+                            <br>
+                            Current Status: {{ job.status }}
+                        </p>
+                        <a href="{{ 'job_description/?id=' + job.job_id }}" class="card-link" style="float: right;">See More</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
         </div>
     </div>
 
 </div>
+{% endif %}
 
 {% endblock %}
 <script src="/index.js"></script>

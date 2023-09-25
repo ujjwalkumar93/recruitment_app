@@ -118,13 +118,16 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+    "User": {
+        "after_insert": "recruitment_app.api.on_user_create", 
+    }
+}
 
 # Scheduled Tasks
 # ---------------
@@ -221,12 +224,3 @@ website_route_rules = [
     {'from_route': '/job/<id>', 'to_route': 'job_description'}
 ]
 
-# navbar_items = [
-#     {
-#         "label": "jobs",
-#         "route": "/jobs",
-#         "icon": "fa fa-globe",
-#         "type": "page",
-       
-#     }
-# ]

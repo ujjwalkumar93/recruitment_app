@@ -11,6 +11,7 @@
   "organization_name",
   "location",
   "logo",
+  "posted_on",
   "publish",
   "minimum_cgpa",
   "job_title",
@@ -74,11 +75,17 @@
    "fieldtype": "Data",
    "label": "Location",
    "reqd": 1
+  },
+  {
+   "fieldname": "posted_on",
+   "fieldtype": "Date",
+   "label": "Posted On",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-20 19:46:21.226852",
+ "modified": "2023-09-25 05:55:16.099364",
  "modified_by": "Administrator",
  "module": "Recruitment App",
  "name": "Job Opening",

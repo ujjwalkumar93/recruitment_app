@@ -16,7 +16,7 @@
                             <h5 class="card-title">{{ job.job_title }}</h5> 
                             <p class="card-text"><span style="font-size: 1.2rem;">{{ job.organization_name }} |</span>  Location: {{ job.location }}</p>
                             <p class="card-text"><span style="font-size: .9rem;">Package:</span> ₹{{ job.budget_from/100000 }}L - ₹{{ job.budget_to/100000 }}L</p>
-                            <p> <span style="font-size: .9rem;">Posted On:</span> {{ job.creation.strftime('%-d %b %Y')}}</p>
+                            <p> <span style="font-size: .9rem;">Posted On:</span> {{ job.posted_on.strftime('%-d %b %Y')}}</p>
                             <a href="{{ 'job_description/?id=' + job.name }}" class="card-link" style="float: right;">See More</a>
                         </div>
                     </div>

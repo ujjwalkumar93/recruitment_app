@@ -2,7 +2,7 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Job Opening', {
-	// refresh: function(frm) {
-
-	// }
+	before_save : function(frm){
+		frm.doc.publish ? frm.doc.posted_on = frappe.datetime.nowdate() : null;
+	}
 });
