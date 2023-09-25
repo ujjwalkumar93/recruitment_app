@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:{name1}-{mobile_number}",
+ "autoname": "format:{name1}-{email}",
  "creation": "2023-09-18 00:48:44.903669",
  "default_view": "List",
  "doctype": "DocType",
@@ -100,7 +100,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-25 09:55:37.546746",
+ "modified": "2023-09-25 10:02:02.015864",
  "modified_by": "Administrator",
  "module": "Recruitment App",
  "name": "Candidate",

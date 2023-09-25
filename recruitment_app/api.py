@@ -16,7 +16,7 @@ def update_profile(docname, name, email, mobile,dob, gender, cgpa, address):
     doc.address = address
     doc.date_of_birth = dob
     doc.cgpa = cgpa
-    doc.save()
+    doc.save(ignore_permissions= True)
     return doc
 
 @frappe.whitelist()
@@ -27,7 +27,7 @@ def create_job_application(user,job_id):
     job_application.candidate = candidate.get('name')
     job_application.status = 'Applied'
     job_application.applied_on = frappe.utils.nowdate()
-    job_application.insert()
+    job_application.insert(ignore_permissions= True)
     return job_application
 
 @frappe.whitelist()
@@ -42,7 +42,7 @@ def schedule_interview(docList):
             job_application.status = 'Interview Scheduled'
             # add 2 days from now for interview date
             job_application.interview_date = add_days(today(), 2)
-            job_application.save()
+            job_application.save(ignore_permissions= True)
     return True
 
 def on_user_create(doc, method):
@@ -50,7 +50,7 @@ def on_user_create(doc, method):
     candidate.user = doc.name
     candidate.email = doc.email
     candidate.insert(ignore_permissions = True)
-    print(doc.email)
+    return candidate
 
 
 

@@ -7,7 +7,7 @@
         <div class="card-body">
             {% if frappe.session.user != 'Guest' %}
             <input type="hidden" id="job-id" name="hiddenField" value="{{job_description.name}}">
-            
+            <span class="badge badge-info" id="badge-hidden"  style="float: right;" hidden>Applied on {{job_description.applied_on}}</span>
             {% if job_description.applied_on %}
             <span class="badge badge-info" id="badge"  style="float: right;">Applied on {{job_description.applied_on}}</span>
             {% else %}

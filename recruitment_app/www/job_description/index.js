@@ -20,12 +20,14 @@ function submitJobApplication () {
         body: formData,
     })
     .then(response => {
+        console.log(response)
         if (response.ok) {
             document.getElementById('apply-btn').hidden = true
-            const badge = document.getElementById('badge')
-            badge.hidden = false
-            badge.innerHTML = `Applied on ${frappe.datetime.get_today()}`
             frappe.msgprint(__('application submitted successfully'));
+            const badge = document.getElementById('badge-hidden')
+            badge.innerHTML = `Applied on ${frappe.datetime.get_today()}`;
+            badge.hidden = false
+            
             return response.json();
         } else {
             frappe.msgprint(__('Something went wrong'));
@@ -35,7 +37,3 @@ function submitJobApplication () {
         console.error('Error: ', error);
     });
 }
-
-// const makeApicall = (url, formData) => {
-    
-// }
