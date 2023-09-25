@@ -7,6 +7,9 @@ It has three doctypes
 2. Candidate
 3. Job Application
 
+### demo
+[Link to demo Video](https://youtu.be/B_KSuhtePwg)
+
 
 #### License
 
